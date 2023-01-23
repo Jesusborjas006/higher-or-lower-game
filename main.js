@@ -35,7 +35,7 @@ url('${currentPerson1.img}') no-repeat center center/cover`;
 
 // Get Second Person
 function getSecondPerson() {
-  currentPerson2 = data[getRandomIndex()];
+  currentPerson2 = data[1];
   personName2.innerText = currentPerson2.name;
   rightBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
   url('${currentPerson2.img}') no-repeat center center/cover`;
@@ -47,29 +47,41 @@ getSecondPerson();
 function getHigherEvent() {
   if (currentPerson2.followers > currentPerson1.followers) {
     console.log(true);
-    vsLogo.style.background = 'green'
+    vsLogo.style.background = "green";
   } else {
     console.log(false);
-    vsLogo.style.background = 'red'
+    vsLogo.style.background = "red";
+    alert("Game Over");
   }
-
-  // console.log(currentPerson2.followers.toLocaleString("en-US"));
-  console.log("Higher Clicked");
 }
 
 function getLowerEvent() {
   if (currentPerson2.followers < currentPerson1.followers) {
     console.log(true);
-    vsLogo.style.background = 'green'
+    vsLogo.style.background = "green";
+    currentPerson1 = currentPerson2;
+    console.log("Next Person:", currentPerson1);
+    personName1.innerText = currentPerson1.name;
+    person1Followers.innerText =
+      currentPerson1.followers.toLocaleString("en-US");
+    leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('${currentPerson1.img}') no-repeat center center/cover`;
+    getNextPerson()
   } else {
     console.log(false);
-    vsLogo.style.background = 'red'
+    alert("Game Over");
+    vsLogo.style.background = "red";
   }
-
-  console.log("Lower Clicked");
 }
 
-function getRandomIndex() {
-  let index = Math.floor(Math.random() * data.length) + 1;
-  return index;
+function getNextPerson() {
+  let newIndex = Math.floor(Math.random() * data.length) + 1;
+  let nextPerson = data[newIndex];
+  currentPerson2 = nextPerson;
+  console.log(currentPerson2);
+  personName2.innerText = currentPerson2.name;
+  rightBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+  url('${currentPerson2.img}') no-repeat center center/cover`;
 }
+
+// getNextPerson();
