@@ -134,5 +134,7 @@ function getToGameOverPage() {
     gamePage.classList.add("hidden");
     gameOverPage.classList.remove("hidden");
     gameOverScore.innerText = currentScore
+    highScore = currentScore
+    highScoreDisplay.innerText = highScore
   }, 1300);
 }
