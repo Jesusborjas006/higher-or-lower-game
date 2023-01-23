@@ -23,7 +23,7 @@ let currentPerson1;
 let currentPerson2;
 
 // Functions
-currentPerson1 = data[0];
+currentPerson1 = data[getRandomIndex()];
 
 // Start Of Game
 
@@ -48,6 +48,14 @@ function getHigherEvent() {
   if (currentPerson2.followers > currentPerson1.followers) {
     console.log(true);
     vsLogo.style.background = "green";
+    currentPerson1 = currentPerson2;
+    console.log("Next Person:", currentPerson1);
+    personName1.innerText = currentPerson1.name;
+    person1Followers.innerText =
+      currentPerson1.followers.toLocaleString("en-US");
+    leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('${currentPerson1.img}') no-repeat center center/cover`;
+    getNextPerson()
   } else {
     console.log(false);
     vsLogo.style.background = "red";
@@ -82,6 +90,11 @@ function getNextPerson() {
   personName2.innerText = currentPerson2.name;
   rightBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
   url('${currentPerson2.img}') no-repeat center center/cover`;
+}
+
+function getRandomIndex() {
+  let newIndex = Math.floor(Math.random() * data.length);
+  return newIndex
 }
 
 // getNextPerson();
