@@ -2,6 +2,8 @@
 // const person2 = new Person(data[1]);
 
 // Query Selectors
+const gamePage = document.querySelector(".main");
+const gameOverPage = document.querySelector(".main-2");
 const leftBackgroundImg = document.querySelector(".left-section");
 const rightBackgroundImg = document.querySelector(".right-section");
 const personName1 = document.querySelector(".left-heading");
@@ -12,10 +14,14 @@ const lowerBtn = document.querySelector(".lower-btn");
 const vsLogo = document.querySelector(".vs-logo");
 const highScoreDisplay = document.querySelector(".high-score");
 const scoreDisplay = document.querySelector(".score");
+const gameOverScore = document.querySelector(".game-over-score");
+const playAgainBtn = document.querySelector(".play-again-btn");
+const spanName = document.querySelector("span");
 
 // Event Listeners
 higherBtn.addEventListener("click", getHigherEvent);
 lowerBtn.addEventListener("click", getLowerEvent);
+playAgainBtn.addEventListener("click", playAgain);
 
 // Global Variables
 let currentPerson1;
@@ -31,6 +37,7 @@ personName1.innerText = currentPerson1.name;
 person1Followers.innerText = currentPerson1.followers.toLocaleString("en-US");
 leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
 url('${currentPerson1.img}') no-repeat top center/cover`;
+spanName.innerText = currentPerson1.name;
 
 // Get Second Person
 function getSecondPerson() {
@@ -57,6 +64,7 @@ function getHigherEvent() {
   } else {
     getLoseColor();
     changeColorBack();
+    getToGameOverPage();
   }
 }
 
@@ -75,6 +83,7 @@ function getLowerEvent() {
   } else {
     getLoseColor();
     changeColorBack();
+    getToGameOverPage();
   }
 }
 
@@ -83,6 +92,7 @@ function getNextPerson() {
   let nextPerson = data[newIndex];
   currentPerson2 = nextPerson;
   personName2.innerText = currentPerson2.name;
+  spanName.innerText = currentPerson1.name;
   rightBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
   url('${currentPerson2.img}') no-repeat top center/cover`;
 }
@@ -99,17 +109,30 @@ function addToScore() {
 
 function getWinColor() {
   vsLogo.style.background = "green";
-  vsLogo.style.padding = "3rem";
+  vsLogo.style.transform = "scale(1.5)";
 }
 
 function getLoseColor() {
   vsLogo.style.background = "red";
-  vsLogo.style.padding = "3rem";
+  vsLogo.style.transform = "scale(1.5)";
 }
 
 function changeColorBack() {
   setTimeout(() => {
     vsLogo.style.background = "#fff";
-    vsLogo.style.padding = "35px";
+    vsLogo.style.transform = "scale(1)";
   }, 1000);
+}
+
+function playAgain() {
+  gamePage.classList.remove("hidden");
+  gameOverPage.classList.add("hidden");
+}
+
+function getToGameOverPage() {
+  setTimeout(() => {
+    gamePage.classList.add("hidden");
+    gameOverPage.classList.remove("hidden");
+    gameOverScore.innerText = currentScore
+  }, 1300);
 }
