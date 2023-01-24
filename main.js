@@ -40,11 +40,6 @@ function getFirstPerson() {
 url('${currentPerson1.img}') no-repeat top center/cover`;
   spanName.innerText = currentPerson1.name;
 }
-// personName1.innerText = currentPerson1.name;
-// person1Followers.innerText = currentPerson1.followers.toLocaleString("en-US");
-// leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-// url('${currentPerson1.img}') no-repeat top center/cover`;
-// spanName.innerText = currentPerson1.name;
 
 // Get Second Person
 function getSecondPerson() {
@@ -137,7 +132,7 @@ function playAgain() {
   gameOverPage.classList.add("hidden");
   currentScore = 0;
   scoreDisplay.innerText = `Score: ${currentScore}`;
-  getFirstPerson()
+  getFirstPerson();
   getSecondPerson();
 }
 
@@ -149,6 +144,20 @@ function getToGameOverPage() {
     if (highScore < currentScore) {
       highScore = currentScore;
       highScoreDisplay.innerText = `High Score: ${highScore}`;
+      console.log(highScore);
+
+      // This is to get the users high score before starting a new game
+      highScoreToStore = currentScore;
+      let stringifiedHighScore = JSON.stringify(highScoreToStore);
+      localStorage.setItem("User High Score", stringifiedHighScore);
     }
   }, 1300);
 }
+
+// Local Storage
+let highScoreToStore;
+let retrievedHighScore = localStorage.getItem("User High Score");
+let parsedHighScore = JSON.parse(retrievedHighScore);
+highScore = parsedHighScore;
+highScoreDisplay.innerText = `High Score: ${highScore}`
+

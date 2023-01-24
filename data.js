@@ -20,7 +20,7 @@ const data = [
   },
   {
     id: 4,
-    name: "Selene Gomez",
+    name: "Selena Gomez",
     followers: 373000000,
     img: "https://www.wallpapertip.com/wmimgs/99-990759_full-hd-selena-gomez-wallpaper-iphone.jpg",
   },
