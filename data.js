@@ -180,4 +180,34 @@ const data = [
     followers: 52500000,
     img: "https://cdn.britannica.com/83/130983-050-82EE4ECC/Michelle-Obama-portrait-first-lady-Blue-Room-2009.jpg",
   },
+  {
+    id: 31,
+    name: "Javier Hernandez",
+    followers: 5700000,
+    img: "https://ca-times.brightspotcdn.com/dims4/default/ac73348/2147483647/strip/true/crop/4380x3062+0+678/resize/1200x839!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa5%2F67%2F07eab54d49869723d52b17e1f502%2Fla-sp-chicharito03.jpg",
+  },
+  {
+    id: 32,
+    name: "Emma Watson",
+    followers: 69300000,
+    img: "https://media.vogue.co.uk/photos/61dda2e71bb9b719caedae94/2:3/w_2560%2Cc_limit/ew%2520x%2520macksfilm%2520british%2520vogue.jpg",
+  },
+  {
+    id: 33,
+    name: "Samuel L. Jackson",
+    followers: 7900000,
+    img: "https://ca-times.brightspotcdn.com/dims4/default/eab3ac7/2147483647/strip/true/crop/2048x1152+0+0/resize/1486x836!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc2%2Ff9%2F7635229409d65f508c014a3a8be6%2Fla-1487361005-kzxrybfvn0-snap-photo",
+  },
+  {
+    id: 34,
+    name: "Jackie Chan",
+    followers: 4800000,
+    img: "https://www.biography.com/.image/t_share/MTc5OTk1MzU0Nzk4NzYxMDgy/gettyimages-858141682.jpg",
+  },
+  {
+    id: 35,
+    name: "Jennifer Aniston",
+    followers: 41200000,
+    img: "https://assets.vogue.com/photos/62a74186459db19bced93aa2/master/pass/1155287717",
+  },
 ];

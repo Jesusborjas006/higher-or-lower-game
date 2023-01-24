@@ -30,22 +30,30 @@ let highScore = 0;
 let currentScore = 0;
 
 // Functions
-currentPerson1 = data[getRandomIndex()];
 
 // Get First Person
-personName1.innerText = currentPerson1.name;
-person1Followers.innerText = currentPerson1.followers.toLocaleString("en-US");
-leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+function getFirstPerson() {
+  currentPerson1 = data[getRandomIndex()];
+  personName1.innerText = currentPerson1.name;
+  person1Followers.innerText = currentPerson1.followers.toLocaleString("en-US");
+  leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
 url('${currentPerson1.img}') no-repeat top center/cover`;
-spanName.innerText = currentPerson1.name;
+  spanName.innerText = currentPerson1.name;
+}
+// personName1.innerText = currentPerson1.name;
+// person1Followers.innerText = currentPerson1.followers.toLocaleString("en-US");
+// leftBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+// url('${currentPerson1.img}') no-repeat top center/cover`;
+// spanName.innerText = currentPerson1.name;
 
 // Get Second Person
 function getSecondPerson() {
-  currentPerson2 = data[1];
+  currentPerson2 = data[getRandomIndex()];
   personName2.innerText = currentPerson2.name;
   rightBackgroundImg.style.background = `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
   url('${currentPerson2.img}') no-repeat top center/cover`;
 }
+getFirstPerson();
 getSecondPerson();
 
 // Check which is higher
@@ -127,14 +135,20 @@ function changeColorBack() {
 function playAgain() {
   gamePage.classList.remove("hidden");
   gameOverPage.classList.add("hidden");
+  currentScore = 0;
+  scoreDisplay.innerText = `Score: ${currentScore}`;
+  getFirstPerson()
+  getSecondPerson();
 }
 
 function getToGameOverPage() {
   setTimeout(() => {
     gamePage.classList.add("hidden");
     gameOverPage.classList.remove("hidden");
-    gameOverScore.innerText = currentScore
-    highScore = currentScore
-    highScoreDisplay.innerText = highScore
+    gameOverScore.innerText = currentScore;
+    if (highScore < currentScore) {
+      highScore = currentScore;
+      highScoreDisplay.innerText = `High Score: ${highScore}`;
+    }
   }, 1300);
 }
