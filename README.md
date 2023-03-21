@@ -1,7 +1,7 @@
 # Higher or Lower Game
 
 ### Abstract: 
-A game just like the original but focusing focusing on their instagram followers. You must choose wether or not the the celebrity has more followers than the current being displayed. 
+A game just like the original but focusing on their instagram followers. You must choose whether or not the the celebrity has more followers than the current being displayed. 
 
 ### The Features Include: 
 - Displays two people to compare.
