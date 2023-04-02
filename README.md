@@ -1,6 +1,6 @@
 # Higher or Lower Game
 
-[Check out site here!](higher-or-lower-game-ceulv6a2l-jesusborjas006.vercel.app)
+[Check out site here!](https://higher-or-lower-game-ceulv6a2l-jesusborjas006.vercel.app/)
 
 ### Abstract: 
 A game just like the original but focusing on their instagram followers. You must choose whether or not the the celebrity has more followers than the current being displayed. 
