@@ -156,7 +156,6 @@ h1 {
 }
 
   .container {
-    border: 2px solid red;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -165,7 +164,6 @@ h1 {
   .left-section {
     width: 100vw;
     height: 50vh;
-    border: 3px solid purple;
   }
 
   .left-sub-heading {
