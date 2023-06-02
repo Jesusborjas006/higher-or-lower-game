@@ -146,3 +146,54 @@ h1 {
   background: #fff;
   color: #000;
 }
+
+/* Media Queries */
+/* Mobile */
+@media only screen and (max-width: 700px) {
+  h1 {
+  margin-top: 25%;
+  font-size: 1.5rem;
+}
+
+  .container {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .left-section {
+    width: 100vw;
+    height: 50vh;
+    border: 3px solid purple;
+  }
+
+  .left-sub-heading {
+  font-size: 2.2rem;
+}
+
+  .right-section {
+    width: 100vw;
+    height: 50vh;
+    border: 3px solid purple;
+  }
+
+  .vs-logo {
+  left: 35%;
+}
+
+.higher-btn,
+.lower-btn {
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+.high-score,
+.score {
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 4%;
+}
+}

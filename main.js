@@ -1,6 +1,3 @@
-// const person1 = new Person(data[0]);
-// const person2 = new Person(data[1]);
-
 // Query Selectors
 const gamePage = document.querySelector(".main");
 const gameOverPage = document.querySelector(".main-2");
@@ -159,5 +156,4 @@ let highScoreToStore;
 let retrievedHighScore = localStorage.getItem("User High Score");
 let parsedHighScore = JSON.parse(retrievedHighScore);
 highScore = parsedHighScore;
-highScoreDisplay.innerText = `High Score: ${highScore}`
-
+highScoreDisplay.innerText = `High Score: ${highScore}`;
